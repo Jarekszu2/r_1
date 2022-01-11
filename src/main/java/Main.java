@@ -68,5 +68,17 @@ public class Main {
         for (int i = 0; i < tabUnique.length; i++) {
             System.out.println(tabUnique[i] + ": " + tabRepetitions[i]);
         }
+
+        System.out.println();
+        List<Food> foodList = Arrays.asList(new Food("bread", 4.0), new Food("bun", 0.5), new Food("milk", 3.0));
+        System.out.println("List of food:");
+        foodList.forEach(System.out::println);
+
+        System.out.println();
+        System.out.println("List of food sorted by price(reversed):");
+        Comparator<Food> comparator1 = Comparator
+                .comparing(Food::getPrice).reversed();
+        foodList.sort(comparator1);
+        foodList.forEach(System.out::println);
     }
 }
